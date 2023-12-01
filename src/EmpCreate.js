@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+ 
+const BASE_URL = "http://ec2-34-239-131-209.compute-1.amazonaws.com:8080";
 const EmpCreate = () => {
 
     const[id,]=useState("");
@@ -18,7 +19,7 @@ const EmpCreate = () => {
       const empdata={name,email,phone,active};
       
 
-      fetch("http://localhost:8080/employee", {
+      fetch(`${BASE_URL}/employee/${id}`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(empdata),

@@ -1,7 +1,7 @@
 // EmpListing.js
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+const BASE_URL = "http://ec2-34-239-131-209.compute-1.amazonaws.com:8080";
 const EmpListing = () => {
     // State to hold employee data
     const [empdata, empdatachange] = useState(null);
@@ -23,7 +23,7 @@ const EmpListing = () => {
     const Removefunction = (id) => {
         if (window.confirm('Do you want to remove?')) {
             // Send DELETE request to remove employee
-            fetch(`http://localhost:8080/employee/${id}`, {
+            fetch(`${BASE_URL}/employee/${id}`, {
                 method: "DELETE"
             })
             .then((res) => {
@@ -39,7 +39,7 @@ const EmpListing = () => {
 
     // UseEffect hook to fetch employee data on component mount
     useEffect(() => {
-        fetch("http://localhost:8080/employee")
+        fetch(`${BASE_URL}/employee`)
             .then((res) => res.json())
             .then((resp) => {
                 empdatachange(resp);

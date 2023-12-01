@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+const BASE_URL = "http://ec2-34-239-131-209.compute-1.amazonaws.com:8080";
 const EmpListing = () => {
     const [empdata, empdatachange] = useState(null);
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ const EmpListing = () => {
     }
     const Removefunction = (id) => {
         if (window.confirm('Do you want to remove?')) {
-            fetch(`http://localhost:8080/employee/${id}`, {
+            fetch(`${BASE_URL}/employee/${id}`, {
                 method: "DELETE"
             }).then((res) => {
                 alert('Removed successfully.')
@@ -28,7 +28,7 @@ const EmpListing = () => {
 
 
     useEffect(() => {
-         fetch("http://localhost:8080/employee").then((res) => {
+        fetch(`${BASE_URL}/employee`).then((res) => {
             return res.json();
         }).then((resp) => {
             empdatachange(resp);

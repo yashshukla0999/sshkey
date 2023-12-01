@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+const BASE_URL = "http://ec2-34-239-131-209.compute-1.amazonaws.com:8080";
+
 
 const EmpDetail = () => {
     const { empid } = useParams();
@@ -9,7 +11,7 @@ const EmpDetail = () => {
 
     useEffect(() => {
         // Fetch a single employee by ID from Spring Boot endpoint
-        fetch(`http://localhost:8080/employee/${empid}`)
+        fetch(`${BASE_URL}/employee/${empid}`)
             .then((res) => res.json())
             .then((data) => empdatachange(data))
             .catch((error) => console.error("Error fetching employee:", error));
