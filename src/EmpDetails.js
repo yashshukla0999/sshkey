@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const BASE_URL = "http://ec2-34-239-131-209.compute-1.amazonaws.com:8080";
+const BASE_URL = "http://localhost:8080";
 
 
 const EmpDetail = () => {
