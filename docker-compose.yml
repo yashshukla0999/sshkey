@@ -12,7 +12,7 @@ services:
 
   spring-boot-app1:
       build:
-        context: ./spring-boot-app
+        context: .,/spring-boot-app
         dockerfile: Dockerfile
       ports:
         - "8080:8080"
