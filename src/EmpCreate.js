@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
  
-const BASE_URL = "http://44.221.207.34:8080";
+const BASE_URL = "http://api_service:8080";
 const EmpCreate = () => {
 
     const[id,]=useState("");

@@ -28,7 +28,7 @@ const EmpListing = () => {
 
 
     useEffect(() => {
-        fetch(`http://44.221.207.34:8080/employee`).then((res) => {
+        fetch(`http://api_service:8080/employee`).then((res) => {
             
             return res.json();
         }).then((resp) => {
