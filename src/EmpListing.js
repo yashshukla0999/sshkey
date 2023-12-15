@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-const BASE_URL = "http://44.221.207.34:8080";
+const BASE_URL = "http://localhost:8080";
 const EmpListing = () => {
     const [empdata, empdatachange] = useState(null);
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ const EmpListing = () => {
 
 
     useEffect(() => {
-        fetch(`http://44.221.207.34:8080/employee`).then((res) => {
+        fetch(`http://localhost:8080/employee`).then((res) => {
             
             return res.json();
         }).then((resp) => {
